@@ -20,6 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
+    
+    func configualInitialVC(){
+        var InitailVC : UIViewController
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        if Auth.auth().currentUser != nil{
+            InitailVC = story.instantiateViewController(withIdentifier: "MainTabBar")
+        }
+        else{
+            InitailVC = story.instantiateViewController(withIdentifier: "FirstVC")
+        }
+        
+        window?.rootViewController = InitailVC
+        window?.makeKeyAndVisible()
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

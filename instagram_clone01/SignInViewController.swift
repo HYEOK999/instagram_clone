@@ -21,6 +21,16 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        if emailTF.text == "" || passwordTF.text == ""{
+            print("빈칸이 있습니다.")
+        }
+        else{
+            AuthService.signIn(email: emailTF.text!, password: passwordTF.text!, onSuccess: {
+                (UIApplication.shared.delegate as! AppDelegate).configualInitialVC()
+            }) { (error) in
+                print(error)
+            }
+        }
     }
     
     @IBAction func backBtn(_ sender: Any) {

@@ -1,5 +1,5 @@
 //
-//  FindPwViewController.swift
+//  ProfileViewController.swift
 //  instagram_clone01
 //
 //  Created by HYEOKBOOK on 29/06/2019.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class FindPwViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var emailTF: UITextField!
+
+    var user : UserModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,22 +19,10 @@ class FindPwViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func findPw(_ sender: Any) {
-        if emailTF.text == "" {
-            print("빈칸이 있습니다.")
-        }
-        else{
-            AuthService.findPw(email: emailTF.text!, onSuccess: {
-                self.navigationController?.popViewController(animated: true)
-            }) { (error) in
-                print("error")
-            }
-        }
+    func fetchUser() {
+        
     }
-    
-    @IBAction func backBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+
     /*
     // MARK: - Navigation
 

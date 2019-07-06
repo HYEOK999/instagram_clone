@@ -73,7 +73,10 @@ class CameraViewController: UIViewController {
                 }
                 else{
                     storageRef.downloadURL(completion: { (url, error) in
-                        self.sendDataToDB(photoURL: "\(url)")
+                        
+                        let photoUrl = url?.absoluteString
+                        
+                        self.sendDataToDB(photoURL: photoUrl!)
                     SVProgressHUD.dismiss()
                     })
                 }

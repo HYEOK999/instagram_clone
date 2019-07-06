@@ -31,6 +31,9 @@
 		48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04922D071F3006C0848 /* HomeViewController.swift */; };
 		48E3B04C22D07206006C0848 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04B22D07206006C0848 /* HomeTableViewCell.swift */; };
 		48E3B04E22D07391006C0848 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04D22D07391006C0848 /* PostModel.swift */; };
+		48E3B05022D08750006C0848 /* ComentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04F22D08750006C0848 /* ComentModel.swift */; };
+		48E3B05222D08A29006C0848 /* ComentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B05122D08A29006C0848 /* ComentViewController.swift */; };
+		48E3B05422D08A69006C0848 /* ComentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B05322D08A69006C0848 /* ComentTableViewCell.swift */; };
 		B8A27CC30F40B182D69FA2CA /* Pods_instagram_clone01Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E8DAF6836EA296D491BFE1 /* Pods_instagram_clone01Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,9 @@
 		48E3B04922D071F3006C0848 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		48E3B04B22D07206006C0848 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		48E3B04D22D07391006C0848 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		48E3B04F22D08750006C0848 /* ComentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentModel.swift; sourceTree = "<group>"; };
+		48E3B05122D08A29006C0848 /* ComentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentViewController.swift; sourceTree = "<group>"; };
+		48E3B05322D08A69006C0848 /* ComentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentTableViewCell.swift; sourceTree = "<group>"; };
 		6DDF9DFA698840522DA36061 /* Pods_instagram_clone01UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instagram_clone01UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		735B89848B6BD953CA646274 /* Pods-instagram_clone01Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_clone01Tests.debug.xcconfig"; path = "Target Support Files/Pods-instagram_clone01Tests/Pods-instagram_clone01Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		827FB0ED6C2F1EA1C8E6F6E7 /* Pods-instagram_clone01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_clone01.debug.xcconfig"; path = "Target Support Files/Pods-instagram_clone01/Pods-instagram_clone01.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,14 +163,17 @@
 				4805E9CE22C73E3600E7B1CF /* AuthService.swift */,
 				4805E9D022C7437400E7B1CF /* Config.swift */,
 				4805E9D422C74D3F00E7B1CF /* ProfileViewController.swift */,
-				4805E9D622C74D7600E7B1CF /* UserModel.swift */,
 				48E3B04722D070B8006C0848 /* LineButton.swift */,
 				4805E9D822C74EA800E7B1CF /* Api.swift */,
 				4805E9DA22C74ECF00E7B1CF /* UserApi.swift */,
 				48E3B04522D0666A006C0848 /* CameraViewController.swift */,
 				48E3B04922D071F3006C0848 /* HomeViewController.swift */,
 				48E3B04B22D07206006C0848 /* HomeTableViewCell.swift */,
+				4805E9D622C74D7600E7B1CF /* UserModel.swift */,
 				48E3B04D22D07391006C0848 /* PostModel.swift */,
+				48E3B04F22D08750006C0848 /* ComentModel.swift */,
+				48E3B05122D08A29006C0848 /* ComentViewController.swift */,
+				48E3B05322D08A69006C0848 /* ComentTableViewCell.swift */,
 			);
 			path = instagram_clone01;
 			sourceTree = "<group>";
@@ -449,9 +458,11 @@
 			files = (
 				4805E9C922C73B9400E7B1CF /* SignInViewController.swift in Sources */,
 				48E3B04E22D07391006C0848 /* PostModel.swift in Sources */,
+				48E3B05222D08A29006C0848 /* ComentViewController.swift in Sources */,
 				4805E9C522C73B5F00E7B1CF /* SignUpViewController.swift in Sources */,
 				4805E9CB22C73BA200E7B1CF /* FindPwViewController.swift in Sources */,
 				4805E9D122C7437400E7B1CF /* Config.swift in Sources */,
+				48E3B05422D08A69006C0848 /* ComentTableViewCell.swift in Sources */,
 				4805E9CF22C73E3600E7B1CF /* AuthService.swift in Sources */,
 				48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */,
 				48E3B04C22D07206006C0848 /* HomeTableViewCell.swift in Sources */,
@@ -461,6 +472,7 @@
 				4805E9D522C74D3F00E7B1CF /* ProfileViewController.swift in Sources */,
 				4805E9D722C74D7600E7B1CF /* UserModel.swift in Sources */,
 				4805E9D922C74EA800E7B1CF /* Api.swift in Sources */,
+				48E3B05022D08750006C0848 /* ComentModel.swift in Sources */,
 				4805E99722C737B700E7B1CF /* AppDelegate.swift in Sources */,
 				4805E9DB22C74ECF00E7B1CF /* UserApi.swift in Sources */,
 			);

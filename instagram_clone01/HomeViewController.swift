@@ -33,8 +33,10 @@ class HomeViewController: UIViewController {
         Database.database().reference().child("posts").observe(.childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let newPost = PostModel.transformPostPhoto(dict: dict)
-                
                 // 사용자 리스트 불러오기
+                
+//                print(newPost.uid)
+                
                 self.fetchUser(uid: newPost.uid! , completed: {
                     self.posts.append(newPost)
                     
@@ -49,7 +51,7 @@ class HomeViewController: UIViewController {
     
     func fetchUser(uid:String, completed:@escaping () -> Void) {
         
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value) { (snapshot) in
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let user = UserModel.transformUser(dict: dict)
                 self.users.append(user)
@@ -59,6 +61,12 @@ class HomeViewController: UIViewController {
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "comentSegue"{
+//            let comentVC = segue.destination
+        }
+    }
 }
 
 

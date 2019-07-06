@@ -22,13 +22,13 @@ class HomeTableViewCell: UITableViewCell {
     
     var post : PostModel? {
         didSet {
-            
+            updateView()
         }
     }
     
     var user : UserModel? {
         didSet {
-            
+            setUserInfo()
         }
     }
     

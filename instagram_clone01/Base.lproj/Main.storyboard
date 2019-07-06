@@ -393,6 +393,7 @@
                     <connections>
                         <outlet property="captionTextView" destination="mNT-2c-DZv" id="Wbq-fb-Q4B"/>
                         <outlet property="photo" destination="rYc-LW-zpR" id="a55-Z7-Dr2"/>
+                        <outlet property="shareBtn" destination="TOc-P1-bCT" id="SH5-X9-ViR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHb-vU-Lzt" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ pod 'Firebase/Auth'
 pod 'SVProgressHUD'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
+pod 'SDWebImage'
 
   # Pods for instagram_clone01
 

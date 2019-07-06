@@ -17,7 +17,7 @@ class UserModel {
 }
 
 extension UserModel {
-    static func transformUser(dict: [String:Any], key:String) -> UserModel{
+    static func transformUser(dict: [String:Any]) -> UserModel{
         let user = UserModel()
         user.email = dict["email"] as? String
         user.profileImgUrl = dict["profileImgUrl"] as? String

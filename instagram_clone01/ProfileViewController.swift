@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -33,4 +34,14 @@ class ProfileViewController: UIViewController {
     }
     */
 
+    @IBAction func logOutBtn(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            (UIApplication.shared.delegate as! AppDelegate).configualInitialVC()
+        }catch(let err) {
+            print(err.localizedDescription)
+        }
+    }
+    
+    
 }

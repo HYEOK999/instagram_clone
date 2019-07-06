@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import SVProgressHUD
 
 class CameraViewController: UIViewController {
 
@@ -56,6 +57,10 @@ class CameraViewController: UIViewController {
     }
 
     @IBAction func postingBtn(_ sender: Any) {
+        view.endEditing(true)
+        
+        SVProgressHUD.show()
+        
         if let profileImg = self.selectedImage, let imgData = profileImg.jpegData(compressionQuality: 0.1){
             let photoIdString = NSUUID().uuidString
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("posts").child(photoIdString)
@@ -63,11 +68,13 @@ class CameraViewController: UIViewController {
             storageRef.putData(imgData, metadata: nil) { (metaData, error) in
                 if error != nil{
                     print(error?.localizedDescription)
+                    SVProgressHUD.dismiss()
                     return
                 }
                 else{
                     storageRef.downloadURL(completion: { (url, error) in
                         self.sendDataToDB(photoURL: "\(url)")
+                    SVProgressHUD.dismiss()
                     })
                 }
             }
@@ -88,11 +95,13 @@ class CameraViewController: UIViewController {
                 "caption" : captionTextView.text!
         ]) { (err, ref) in
             if err != nil{
+                SVProgressHUD.dismiss()
                 return
             }
             else{
                 self.clean()
-                print("complete")
+                self.tabBarController?.selectedIndex = 0
+                SVProgressHUD.dismiss()
             }
         }
         

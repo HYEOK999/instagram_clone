@@ -44,7 +44,7 @@ class AuthService{
                 if error != nil{
                     return
                 }
-                let profileImgURL = storageRef.downloadURL(completion: { (url, error) in
+               storageRef.downloadURL(completion: { (url, error) in
                     if error != nil{
                         return
                     }

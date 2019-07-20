@@ -21,7 +21,6 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountBtn: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     
-    
     var homeVC : HomeViewController?
     var postRef : DatabaseReference!
     

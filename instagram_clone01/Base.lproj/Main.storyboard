@@ -253,9 +253,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG8-FN-t1H">
-                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG8-FN-t1H">
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="U16-AG-Idl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -264,6 +266,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tG8-FN-t1H" firstAttribute="leading" secondItem="qVg-eG-bD9" secondAttribute="leading" id="Rew-CC-5cE"/>
+                            <constraint firstItem="tG8-FN-t1H" firstAttribute="trailing" secondItem="qVg-eG-bD9" secondAttribute="trailing" id="Yn7-ld-TPk"/>
+                            <constraint firstAttribute="bottom" secondItem="tG8-FN-t1H" secondAttribute="bottom" id="ziw-mO-bxO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qVg-eG-bD9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="oUW-36-ywD">
@@ -274,6 +281,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="constrainToBottom" destination="ziw-mO-bxO" id="hl1-l2-4yC"/>
                         <outlet property="emailTF" destination="3dm-X1-6Wf" id="ApL-xX-xYm"/>
                         <outlet property="passwordTF" destination="agJ-Z4-2oV" id="1gg-wF-fdI"/>
                     </connections>

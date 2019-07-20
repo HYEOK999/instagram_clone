@@ -20,6 +20,9 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCountBtn: UIButton!
     @IBOutlet weak var captionLabel: UILabel!
     
+    
+    var homeVC : HomeViewController?
+    
     var post : PostModel? {
         didSet {
             updateView()
@@ -55,9 +58,18 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         nameLabel.text = ""
         captionLabel.text = ""
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(commentImageView_TouchUpInside))
+        comentImageView.addGestureRecognizer(tapGesture)
+        comentImageView.isUserInteractionEnabled = true
         // Initialization code
     }
 
+    @objc func commentImageView_TouchUpInside(){
+        if let id = post?.id{
+            homeVC?.performSegue(withIdentifier: "comentSegue", sender: id)
+        }
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         profileImageView.image = UIImage(named: "placeholderImg")

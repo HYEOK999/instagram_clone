@@ -11,14 +11,17 @@ class PostModel{
     var uid : String?
     var photoURL : String?
     var caption : String?
+    var id : String?
 }
 
 extension PostModel {
-    static func transformPostPhoto(dict: [String:Any]) -> PostModel{
+    static func transformPostPhoto(dict: [String:Any], key:String) -> PostModel{
         let post = PostModel()
         post.caption = dict["caption"] as? String
         post.uid = dict["uid"] as? String
         post.photoURL = dict["photoURL"] as? String
+        post.id = key
+
         
         return post
     }

@@ -12,6 +12,8 @@ class ComentViewController: UIViewController {
 
     @IBOutlet weak var tableVW: UITableView!
     
+    var postId : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableVW.delegate = self

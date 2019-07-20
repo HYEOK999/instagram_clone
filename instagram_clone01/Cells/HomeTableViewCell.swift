@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import FirebaseDatabase
+import FirebaseAuth
 
 class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
@@ -22,6 +23,7 @@ class HomeTableViewCell: UITableViewCell {
     
     
     var homeVC : HomeViewController?
+    var postRef : DatabaseReference!
     
     var post : PostModel? {
         didSet {
@@ -42,7 +44,18 @@ class HomeTableViewCell: UITableViewCell {
             postImageView.sd_setImage(with: photoUrl)
             
         }
-        setUserInfo()
+        Database.database().reference().child("posts").child(self.post!.id!).observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String:Any] {
+                let post = PostModel.transformPostPhoto(dict: dict, key: snapshot.key)
+                self.updatLike(post: post)
+            }
+        }
+        
+        Api.Post.REF_POSTS.child(post!.id!).observe(.childChanged) { (snapshot) in
+            if let value = snapshot.value as? Int{
+                self.likeCountBtn.setTitle("\(value) likes", for: .normal)
+            }
+        }
     }
     
     func setUserInfo(){
@@ -50,7 +63,19 @@ class HomeTableViewCell: UITableViewCell {
         if let photoUrlString = user?.profileImgUrl{
             let photoUrl = URL(string: photoUrlString)
             profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
-            
+        }
+    }
+    
+    func updatLike(post: PostModel){
+        let imageName = post.likes == nil || !post.isliked! ? "like" : "likeSelected"
+        likeImageView.image = UIImage(named: imageName)
+        guard let count = post.likeCount else {
+            return
+        }
+        if count != 0 {
+            likeCountBtn.setTitle("\(count) likes", for: .normal)
+        }else{
+            likeCountBtn.setTitle("No likes", for: .normal)
         }
     }
     
@@ -62,8 +87,50 @@ class HomeTableViewCell: UITableViewCell {
         comentImageView.addGestureRecognizer(tapGesture)
         comentImageView.isUserInteractionEnabled = true
         // Initialization code
+        
+        let tapGestureLikeImgView = UITapGestureRecognizer(target: self, action: #selector(self.likeImageView_TouchUpInside))
+        likeImageView.addGestureRecognizer(tapGestureLikeImgView)
+        likeImageView.isUserInteractionEnabled = true
     }
 
+    @objc func likeImageView_TouchUpInside(){
+        postRef = Api.Post.REF_POSTS.child(post!.id!)
+        incrementLikes(forRef: postRef)
+    }
+    
+    func incrementLikes(forRef ref: DatabaseReference){
+        ref.runTransactionBlock({ (currentData) -> TransactionResult in
+            if var post = currentData.value as? [String : AnyObject], let uid = Auth.auth().currentUser?.uid{
+                var likes : Dictionary<String, Bool>
+                likes = post["likes"] as? [String : Bool] ?? [:]
+                var likeCount = post["likeCount"] as? Int ?? 0
+                if let _ = likes[uid] {
+                    likeCount -= 1 // 취소하면 -1씩 감소
+                    likes.removeValue(forKey: uid)
+                }else{
+                    likeCount += 1
+                    likes[uid] = true
+                }
+                post["likeCount"] = likeCount as AnyObject?
+                post["likes"] = likes as AnyObject?
+
+                currentData.value = post
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, comitted, snapshot) in
+            if let error = error{
+                print(error.localizedDescription)
+            }
+            else{
+                if let dict = snapshot?.value as? [String:Any] {
+                    let post = PostModel.transformPostPhoto(dict: dict, key: snapshot!.key)
+                    self.updatLike(post: post)
+                }
+            }
+        }
+    }
+    
     @objc func commentImageView_TouchUpInside(){
         if let id = post?.id{
             homeVC?.performSegue(withIdentifier: "comentSegue", sender: id)

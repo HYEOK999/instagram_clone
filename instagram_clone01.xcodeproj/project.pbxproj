@@ -10,6 +10,8 @@
 		0BEC8E4BCC47B7BBAD16D74B /* Pods_instagram_clone01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC225590AEF4665D1BAB851 /* Pods_instagram_clone01.framework */; };
 		201DEE97421BBC31DE22A7C6 /* Pods_instagram_clone01UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDF9DFA698840522DA36061 /* Pods_instagram_clone01UITests.framework */; };
 		4802894F22E2DE840095C471 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802894E22E2DE840095C471 /* PostApi.swift */; };
+		4802895122E2E8970095C471 /* ComentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802895022E2E8970095C471 /* ComentApi.swift */; };
+		4802895322E2EAEC0095C471 /* PostComentApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802895222E2EAEC0095C471 /* PostComentApi.swift */; };
 		4805E99722C737B700E7B1CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805E99622C737B700E7B1CF /* AppDelegate.swift */; };
 		4805E99922C737B700E7B1CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805E99822C737B700E7B1CF /* ViewController.swift */; };
 		4805E99C22C737B700E7B1CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4805E99A22C737B700E7B1CF /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		164A838CF992C2412293FC5A /* Pods-instagram_clone01UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram_clone01UITests.release.xcconfig"; path = "Target Support Files/Pods-instagram_clone01UITests/Pods-instagram_clone01UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4802894E22E2DE840095C471 /* PostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		4802895022E2E8970095C471 /* ComentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentApi.swift; sourceTree = "<group>"; };
+		4802895222E2EAEC0095C471 /* PostComentApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComentApi.swift; sourceTree = "<group>"; };
 		4805E99322C737B700E7B1CF /* instagram_clone01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram_clone01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4805E99622C737B700E7B1CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4805E99822C737B700E7B1CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				4805E9D822C74EA800E7B1CF /* Api.swift */,
 				4805E9DA22C74ECF00E7B1CF /* UserApi.swift */,
 				4802894E22E2DE840095C471 /* PostApi.swift */,
+				4802895022E2E8970095C471 /* ComentApi.swift */,
+				4802895222E2EAEC0095C471 /* PostComentApi.swift */,
 				4805E9CE22C73E3600E7B1CF /* AuthService.swift */,
 			);
 			path = Apis;
@@ -517,8 +523,10 @@
 				4805E9D722C74D7600E7B1CF /* UserModel.swift in Sources */,
 				4805E9D922C74EA800E7B1CF /* Api.swift in Sources */,
 				48E3B05022D08750006C0848 /* ComentModel.swift in Sources */,
+				4802895322E2EAEC0095C471 /* PostComentApi.swift in Sources */,
 				4805E99722C737B700E7B1CF /* AppDelegate.swift in Sources */,
 				4805E9DB22C74ECF00E7B1CF /* UserApi.swift in Sources */,
+				4802895122E2E8970095C471 /* ComentApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

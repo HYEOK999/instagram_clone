@@ -659,25 +659,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpJ-A0-zNb">
-                                                    <rect key="frame" x="12" y="16" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpJ-A0-zNb">
+                                                    <rect key="frame" x="15" y="15" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="PXq-f6-PQt"/>
+                                                        <constraint firstAttribute="height" constant="36" id="tuG-YY-ySv"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wda-vF-7aT">
-                                                    <rect key="frame" x="60" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-Yo-9sJ">
-                                                    <rect key="frame" x="60" y="40" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="V0u-Sw-w8M">
+                                                    <rect key="frame" x="61" y="15" width="343" height="38"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wda-vF-7aT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwb-Yo-9sJ">
+                                                            <rect key="frame" x="0.0" y="21" width="343" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V0u-Sw-w8M" firstAttribute="top" secondItem="JhV-oC-ADH" secondAttribute="top" constant="15" id="1qg-Iu-h1X"/>
+                                                <constraint firstItem="WpJ-A0-zNb" firstAttribute="leading" secondItem="JhV-oC-ADH" secondAttribute="leading" constant="15" id="C8r-Nh-WTG"/>
+                                                <constraint firstAttribute="trailing" secondItem="V0u-Sw-w8M" secondAttribute="trailing" constant="10" id="DLy-N7-wfy"/>
+                                                <constraint firstItem="WpJ-A0-zNb" firstAttribute="top" secondItem="JhV-oC-ADH" secondAttribute="top" constant="15" id="jon-jy-6LL"/>
+                                                <constraint firstItem="V0u-Sw-w8M" firstAttribute="leading" secondItem="WpJ-A0-zNb" secondAttribute="trailing" constant="10" id="qO2-Ha-MW7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="comentLabel" destination="Iwb-Yo-9sJ" id="1ra-Aa-g3X"/>
@@ -706,6 +724,9 @@
                                             <constraint firstAttribute="height" constant="40" id="mxz-sp-kyu"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendBtn:" destination="vLb-Vk-PAh" eventType="touchUpInside" id="P6o-MS-eBB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -735,6 +756,9 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="comentTextField" destination="E6z-MS-TOf" id="rin-BR-nIP"/>
+                        <outlet property="constraintToBottom" destination="8tJ-In-Lhm" id="jdy-hQ-WeW"/>
+                        <outlet property="sendBtn" destination="XKF-mb-dZX" id="nM4-3v-iNu"/>
                         <outlet property="tableVW" destination="yER-8m-7ZC" id="qg3-mM-WPS"/>
                     </connections>
                 </viewController>

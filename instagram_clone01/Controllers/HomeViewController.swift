@@ -38,13 +38,13 @@ class HomeViewController: UIViewController {
                 SVProgressHUD.dismiss()
                 self.tableVW.reloadData()
             })
-        }
+        } // 아래의 내용을 PostApi 에 담아서 분리하여 정리하였음.
 //        Database.database().reference().child("posts").observe(.childAdded) { (snapshot) in
 //            if let dict = snapshot.value as? [String: Any] {
 //                let newPost = PostModel.transformPostPhoto(dict: dict)
 //                // 사용자 리스트 불러오기
 //
-////                print(newPost.uid)
+//                print(newPost.uid)
 //
 //                self.fetchUser(uid: Auth.auth().currentUser!.uid, completed: {
 //                    self.posts.append(newPost)
@@ -58,11 +58,10 @@ class HomeViewController: UIViewController {
     }
     
     func fetchUser(uid:String, completed:@escaping () -> Void) {
-        
         Api.User.observeUser(withId: uid) { (user) in
             self.users.append(user)
             completed()
-        }
+        }  // 아래의 내용을 UserApi 에 담아서 분리하여 정리하였음.
 //        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
 //            if let dict = snapshot.value as? [String: Any] {
 //                let user = UserModel.transformUser(dict: dict)
@@ -70,7 +69,6 @@ class HomeViewController: UIViewController {
 //                completed()
 //            }
 //        }
-//
     }
     
     

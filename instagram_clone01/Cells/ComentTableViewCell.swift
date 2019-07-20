@@ -21,7 +21,7 @@ class ComentTableViewCell: UITableViewCell {
     
     var user: UserModel? {
         didSet {
-            
+            setUpUserInfo()
         }
     }
     
@@ -42,6 +42,11 @@ class ComentTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
             profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profileImageView.image = UIImage(named: "placeholderImg")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

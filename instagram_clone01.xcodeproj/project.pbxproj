@@ -29,6 +29,12 @@
 		4805E9D722C74D7600E7B1CF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805E9D622C74D7600E7B1CF /* UserModel.swift */; };
 		4805E9D922C74EA800E7B1CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805E9D822C74EA800E7B1CF /* Api.swift */; };
 		4805E9DB22C74ECF00E7B1CF /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805E9DA22C74ECF00E7B1CF /* UserApi.swift */; };
+		481E76E722E9C636005E1C43 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76E622E9C636005E1C43 /* ProfileCollectionViewCell.swift */; };
+		481E76E922E9C7AA005E1C43 /* ProfileCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76E822E9C7AA005E1C43 /* ProfileCollectionReusableView.swift */; };
+		481E76EB22E9CA55005E1C43 /* MyPostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76EA22E9CA55005E1C43 /* MyPostApi.swift */; };
+		481E76ED22E9D527005E1C43 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76EC22E9D527005E1C43 /* PeopleTableViewCell.swift */; };
+		481E76EF22E9D539005E1C43 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76EE22E9D539005E1C43 /* PeopleViewController.swift */; };
+		481E76F122E9DA41005E1C43 /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76F022E9DA41005E1C43 /* FollowApi.swift */; };
 		48E3B04622D0666A006C0848 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04522D0666A006C0848 /* CameraViewController.swift */; };
 		48E3B04822D070B9006C0848 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04722D070B8006C0848 /* LineButton.swift */; };
 		48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04922D071F3006C0848 /* HomeViewController.swift */; };
@@ -85,6 +91,12 @@
 		4805E9D622C74D7600E7B1CF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4805E9D822C74EA800E7B1CF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		4805E9DA22C74ECF00E7B1CF /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		481E76E622E9C636005E1C43 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		481E76E822E9C7AA005E1C43 /* ProfileCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionReusableView.swift; sourceTree = "<group>"; };
+		481E76EA22E9CA55005E1C43 /* MyPostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostApi.swift; sourceTree = "<group>"; };
+		481E76EC22E9D527005E1C43 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		481E76EE22E9D539005E1C43 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		481E76F022E9DA41005E1C43 /* FollowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
 		48E3B04522D0666A006C0848 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		48E3B04722D070B8006C0848 /* LineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
 		48E3B04922D071F3006C0848 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +153,7 @@
 				48E3B04522D0666A006C0848 /* CameraViewController.swift */,
 				48E3B05122D08A29006C0848 /* ComentViewController.swift */,
 				4805E9D422C74D3F00E7B1CF /* ProfileViewController.swift */,
+				481E76EE22E9D539005E1C43 /* PeopleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +168,8 @@
 				4802895022E2E8970095C471 /* ComentApi.swift */,
 				4802895222E2EAEC0095C471 /* PostComentApi.swift */,
 				4805E9CE22C73E3600E7B1CF /* AuthService.swift */,
+				481E76EA22E9CA55005E1C43 /* MyPostApi.swift */,
+				481E76F022E9DA41005E1C43 /* FollowApi.swift */,
 			);
 			path = Apis;
 			sourceTree = "<group>";
@@ -174,6 +189,8 @@
 			children = (
 				48E3B04B22D07206006C0848 /* HomeTableViewCell.swift */,
 				48E3B05322D08A69006C0848 /* ComentTableViewCell.swift */,
+				481E76E622E9C636005E1C43 /* ProfileCollectionViewCell.swift */,
+				481E76EC22E9D527005E1C43 /* PeopleTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -182,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				48E3B04722D070B8006C0848 /* LineButton.swift */,
+				481E76E822E9C7AA005E1C43 /* ProfileCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,17 +531,23 @@
 				4805E9CB22C73BA200E7B1CF /* FindPwViewController.swift in Sources */,
 				4805E9D122C7437400E7B1CF /* Config.swift in Sources */,
 				48E3B05422D08A69006C0848 /* ComentTableViewCell.swift in Sources */,
+				481E76ED22E9D527005E1C43 /* PeopleTableViewCell.swift in Sources */,
 				4805E9CF22C73E3600E7B1CF /* AuthService.swift in Sources */,
+				481E76E722E9C636005E1C43 /* ProfileCollectionViewCell.swift in Sources */,
 				48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */,
 				48E3B04C22D07206006C0848 /* HomeTableViewCell.swift in Sources */,
 				48E3B04622D0666A006C0848 /* CameraViewController.swift in Sources */,
+				481E76EB22E9CA55005E1C43 /* MyPostApi.swift in Sources */,
 				4805E99922C737B700E7B1CF /* ViewController.swift in Sources */,
 				48E3B04822D070B9006C0848 /* LineButton.swift in Sources */,
 				4805E9D522C74D3F00E7B1CF /* ProfileViewController.swift in Sources */,
 				4805E9D722C74D7600E7B1CF /* UserModel.swift in Sources */,
+				481E76F122E9DA41005E1C43 /* FollowApi.swift in Sources */,
+				481E76E922E9C7AA005E1C43 /* ProfileCollectionReusableView.swift in Sources */,
 				4805E9D922C74EA800E7B1CF /* Api.swift in Sources */,
 				48E3B05022D08750006C0848 /* ComentModel.swift in Sources */,
 				4802895322E2EAEC0095C471 /* PostComentApi.swift in Sources */,
+				481E76EF22E9D539005E1C43 /* PeopleViewController.swift in Sources */,
 				4805E99722C737B700E7B1CF /* AppDelegate.swift in Sources */,
 				4805E9DB22C74ECF00E7B1CF /* UserApi.swift in Sources */,
 				4802895122E2E8970095C471 /* ComentApi.swift in Sources */,

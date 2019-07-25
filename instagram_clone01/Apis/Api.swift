@@ -12,4 +12,6 @@ struct Api{
     static var Post = PostApi()
     static var Coment = ComentApi()
     static var PostComent = PostComentApi()
+    static var MyPosts = MyPostApi()
+    static var Follow = FollowApi()
 }

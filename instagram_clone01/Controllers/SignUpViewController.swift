@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var constraintToBottom: NSLayoutConstraint!
     
     var selectedImg : UIImage?
     
@@ -23,6 +24,9 @@ class SignUpViewController: UIViewController {
         profileImg.addGestureRecognizer(tapGesture)
         profileImg.isUserInteractionEnabled = true
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         // Do any additional setup after loading the view.
     }
     
@@ -56,6 +60,21 @@ class SignUpViewController: UIViewController {
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+        UIView.animate(withDuration: 0.3) {
+            self.constraintToBottom.constant = keyboardFrame!.height
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        UIView.animate(withDuration: 0.3) {
+            self.constraintToBottom.constant = 0
+            self.view.layoutIfNeeded()
+        }
     }
     /*
     // MARK: - Navigation

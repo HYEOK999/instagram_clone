@@ -30,6 +30,7 @@ class ProfileViewController: UIViewController {
     func fetchUser() {
         Api.User.observeCurrentUser { (user) in
             self.user = user
+            self.navigationItem.title = user.username
             self.collectionVW.reloadData()
         }
     }
@@ -47,15 +48,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func logOutBtn(_ sender: Any) {
         do{

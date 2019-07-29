@@ -489,6 +489,7 @@
                         <segue destination="veD-y5-7sD" kind="relationship" relationship="viewControllers" id="fgC-g4-2yL"/>
                         <segue destination="oj8-wK-XhG" kind="relationship" relationship="viewControllers" id="JYk-fh-tIt"/>
                         <segue destination="6FG-Xo-m1i" kind="relationship" relationship="viewControllers" id="VpM-pk-RZc"/>
+                        <segue destination="Oji-nl-c8w" kind="relationship" relationship="viewControllers" id="KaP-0d-cyh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkR-e8-YxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -897,6 +898,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnp-Fv-LMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6534.7826086956529" y="1433.7053571428571"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="EMG-Ua-PJu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oji-nl-c8w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="HWk-nD-Ihh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qjU-AT-GZv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjk-Ty-6Yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4706" y="2160"/>
         </scene>
     </scenes>
     <resources>

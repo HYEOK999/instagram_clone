@@ -36,6 +36,11 @@
 		481E76EF22E9D539005E1C43 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76EE22E9D539005E1C43 /* PeopleViewController.swift */; };
 		481E76F122E9DA41005E1C43 /* FollowApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76F022E9DA41005E1C43 /* FollowApi.swift */; };
 		481E76F322E9E161005E1C43 /* FeedApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76F222E9E161005E1C43 /* FeedApi.swift */; };
+		481E76F522E9E713005E1C43 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E76F422E9E713005E1C43 /* Search.storyboard */; };
+		481E76F822E9E7BE005E1C43 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76F722E9E7BE005E1C43 /* SearchViewController.swift */; };
+		481E76FC22E9E800005E1C43 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76FB22E9E800005E1C43 /* SearchCollectionViewCell.swift */; };
+		481E76FE22E9E850005E1C43 /* DisCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76FD22E9E850005E1C43 /* DisCoverViewController.swift */; };
+		481E770022E9E962005E1C43 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76FF22E9E962005E1C43 /* SearchTableViewCell.swift */; };
 		48E3B04622D0666A006C0848 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04522D0666A006C0848 /* CameraViewController.swift */; };
 		48E3B04822D070B9006C0848 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04722D070B8006C0848 /* LineButton.swift */; };
 		48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04922D071F3006C0848 /* HomeViewController.swift */; };
@@ -99,6 +104,11 @@
 		481E76EE22E9D539005E1C43 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		481E76F022E9DA41005E1C43 /* FollowApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowApi.swift; sourceTree = "<group>"; };
 		481E76F222E9E161005E1C43 /* FeedApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedApi.swift; sourceTree = "<group>"; };
+		481E76F422E9E713005E1C43 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		481E76F722E9E7BE005E1C43 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		481E76FB22E9E800005E1C43 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		481E76FD22E9E850005E1C43 /* DisCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisCoverViewController.swift; sourceTree = "<group>"; };
+		481E76FF22E9E962005E1C43 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		48E3B04522D0666A006C0848 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		48E3B04722D070B8006C0848 /* LineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
 		48E3B04922D071F3006C0848 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +166,8 @@
 				48E3B05122D08A29006C0848 /* ComentViewController.swift */,
 				4805E9D422C74D3F00E7B1CF /* ProfileViewController.swift */,
 				481E76EE22E9D539005E1C43 /* PeopleViewController.swift */,
+				481E76F722E9E7BE005E1C43 /* SearchViewController.swift */,
+				481E76FD22E9E850005E1C43 /* DisCoverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,8 +204,10 @@
 			children = (
 				48E3B04B22D07206006C0848 /* HomeTableViewCell.swift */,
 				48E3B05322D08A69006C0848 /* ComentTableViewCell.swift */,
-				481E76E622E9C636005E1C43 /* ProfileCollectionViewCell.swift */,
 				481E76EC22E9D527005E1C43 /* PeopleTableViewCell.swift */,
+				481E76E622E9C636005E1C43 /* ProfileCollectionViewCell.swift */,
+				481E76FB22E9E800005E1C43 /* SearchCollectionViewCell.swift */,
+				481E76FF22E9E962005E1C43 /* SearchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -239,7 +253,7 @@
 				4802894922E2DD980095C471 /* Controllers */,
 				4802894C22E2DE0D0095C471 /* Cells */,
 				4802894B22E2DDEE0095C471 /* Models */,
-				4805E99A22C737B700E7B1CF /* Main.storyboard */,
+				481E76F622E9E727005E1C43 /* Storyboards */,
 				4805E99D22C737B800E7B1CF /* Assets.xcassets */,
 				4805E99F22C737B800E7B1CF /* LaunchScreen.storyboard */,
 				4805E9A222C737B800E7B1CF /* Info.plist */,
@@ -264,6 +278,15 @@
 				4805E9B822C737B800E7B1CF /* Info.plist */,
 			);
 			path = instagram_clone01UITests;
+			sourceTree = "<group>";
+		};
+		481E76F622E9E727005E1C43 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				481E76F422E9E713005E1C43 /* Search.storyboard */,
+				4805E99A22C737B700E7B1CF /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		B616BAB02B2C30170A14C0EF /* Frameworks */ = {
@@ -401,6 +424,7 @@
 				4805E99E22C737B800E7B1CF /* Assets.xcassets in Resources */,
 				4805E99C22C737B700E7B1CF /* Main.storyboard in Resources */,
 				4805E9D322C74A5100E7B1CF /* GoogleService-Info.plist in Resources */,
+				481E76F522E9E713005E1C43 /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481E76F822E9E7BE005E1C43 /* SearchViewController.swift in Sources */,
 				4802894F22E2DE840095C471 /* PostApi.swift in Sources */,
 				4805E9C922C73B9400E7B1CF /* SignInViewController.swift in Sources */,
 				48E3B04E22D07391006C0848 /* PostModel.swift in Sources */,
@@ -540,11 +565,14 @@
 				481E76E722E9C636005E1C43 /* ProfileCollectionViewCell.swift in Sources */,
 				48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */,
 				48E3B04C22D07206006C0848 /* HomeTableViewCell.swift in Sources */,
+				481E770022E9E962005E1C43 /* SearchTableViewCell.swift in Sources */,
+				481E76FC22E9E800005E1C43 /* SearchCollectionViewCell.swift in Sources */,
 				48E3B04622D0666A006C0848 /* CameraViewController.swift in Sources */,
 				481E76EB22E9CA55005E1C43 /* MyPostApi.swift in Sources */,
 				4805E99922C737B700E7B1CF /* ViewController.swift in Sources */,
 				48E3B04822D070B9006C0848 /* LineButton.swift in Sources */,
 				4805E9D522C74D3F00E7B1CF /* ProfileViewController.swift in Sources */,
+				481E76FE22E9E850005E1C43 /* DisCoverViewController.swift in Sources */,
 				4805E9D722C74D7600E7B1CF /* UserModel.swift in Sources */,
 				481E76F122E9DA41005E1C43 /* FollowApi.swift in Sources */,
 				481E76E922E9C7AA005E1C43 /* ProfileCollectionReusableView.swift in Sources */,

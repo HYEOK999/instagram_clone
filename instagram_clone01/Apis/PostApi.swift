@@ -48,4 +48,17 @@ class PostApi{
             }
         })
     }
+    
+    func observeTopPosts(completion:@escaping(PostModel) -> Void) {
+        REF_POSTS.queryOrdered(byChild: "likeCount").observeSingleEvent(of: .value) { (snapshot) in
+            let arraySnapshot = (snapshot.children.allObjects as! [DataSnapshot]).reversed()
+            arraySnapshot.forEach({ (child) in
+                if let dict = child.value as? [String:Any]{
+                    let post = PostModel.transformPostPhoto(dict: dict, key: snapshot.key)
+                    completion(post)
+                }
+            })
+        }
+        
+    }
 }

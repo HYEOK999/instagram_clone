@@ -61,26 +61,15 @@ class CameraViewController: UIViewController {
         
         SVProgressHUD.show()
         
-        if let profileImg = self.selectedImage, let imgData = profileImg.jpegData(compressionQuality: 0.1){
-            let photoIdString = NSUUID().uuidString
-            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("posts").child(photoIdString)
-            
-            storageRef.putData(imgData, metadata: nil) { (metaData, error) in
-                if error != nil{
-                    print(error?.localizedDescription)
-                    SVProgressHUD.dismiss()
-                    return
-                }
-                else{
-                    storageRef.downloadURL(completion: { (url, error) in
-                        
-                        let photoUrl = url?.absoluteString
-                        
-                        self.sendDataToDB(photoURL: photoUrl!)
-                    SVProgressHUD.dismiss()
-                    })
-                }
+        if let profileImg = self.selectedImage, let imageData = profileImg.jpegData(compressionQuality: 0.1) {
+            HelperService.uploadDataToServer(data: imageData, caption: captionTextView.text!) {
+                self.clean()
+                self.tabBarController?.selectedIndex = 0
+                
+                SVProgressHUD.dismiss()
             }
+        } else{
+            SVProgressHUD.showError(withStatus: "Profile Image Can't be Empty")
         }
     }
     

@@ -15,7 +15,8 @@ class ProfileCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var myPostCount: UILabel!
     @IBOutlet weak var myFallowingCount: UILabel!
     @IBOutlet weak var myFollowerCount: UILabel!
- 
+    @IBOutlet weak var fallowBtn: UIButton!
+    
     var user: UserModel? {
         didSet{
             updateView()
@@ -29,6 +30,50 @@ class ProfileCollectionReusableView: UICollectionReusableView {
 //            self.profileImg.sd_setImage(with: photoUrl)
             self.profileImg.kf.setImage(with: photoUrl)
         }
+        
+        Api.MyPosts.fetchCountMyPosts(userId: user!.id!) { (count) in
+            self.myPostCount.text = "\(count)"
+        }
     }
     
+    func updateStateFallowBtn(){
+        if user!.isFollowing! {
+            configueUnFallowBtn()
+        } else {
+            configueFallowBtn()
+        }
+    }
+    
+    func configueFallowBtn() {
+        fallowBtn.layer.borderWidth = 1
+        fallowBtn.layer.borderColor = UIColor.green.cgColor
+        fallowBtn.layer.cornerRadius = 5.0
+        fallowBtn.clipsToBounds = true
+        
+        fallowBtn.setTitleColor(.green, for: .normal)
+        fallowBtn.backgroundColor = .gray
+        fallowBtn.setTitle("Fallow", for: .normal)
+        fallowBtn.addTarget(self, action: #selector(self.fallowAction), for: .touchUpInside)
+        
+    }
+    
+    func configueUnFallowBtn() {
+        fallowBtn.layer.borderWidth = 1
+        fallowBtn.layer.borderColor = UIColor.purple.cgColor
+        fallowBtn.layer.cornerRadius = 5.0
+        fallowBtn.clipsToBounds = true
+        
+        fallowBtn.setTitleColor(.purple, for: .normal)
+        fallowBtn.backgroundColor = .lightGray
+        fallowBtn.setTitle("Fallow", for: .normal)
+        fallowBtn.addTarget(self, action: #selector(self.unFallowAction), for: .touchUpInside)
+    }
+    
+    @objc func fallowAction() {
+        
+    }
+    
+    @objc func unFallowAction() {
+        
+    }
 }

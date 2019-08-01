@@ -22,19 +22,33 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bWw-tM-D3W">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="84" height="86"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iCb-8Z-jgI">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="iCb-8Z-jgI" customClass="DisCoverCollectionViewCell" customModule="instagram_clone01" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="84" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uLz-tv-HYn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="86"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="uLz-tv-HYn" firstAttribute="top" secondItem="iCb-8Z-jgI" secondAttribute="top" id="3d1-r3-Oi6"/>
+                                            <constraint firstAttribute="bottom" secondItem="uLz-tv-HYn" secondAttribute="bottom" id="VF2-4R-x0p"/>
+                                            <constraint firstItem="uLz-tv-HYn" firstAttribute="leading" secondItem="iCb-8Z-jgI" secondAttribute="leading" id="YB8-Jf-Vta"/>
+                                            <constraint firstAttribute="trailing" secondItem="uLz-tv-HYn" secondAttribute="trailing" id="wFm-4j-uUz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photo" destination="uLz-tv-HYn" id="Rlu-Vy-t0I"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

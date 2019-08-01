@@ -11,11 +11,27 @@ import UIKit
 class DisCoverViewController: UIViewController {
 
     @IBOutlet weak var collectionVW: UICollectionView!
+    
+    var posts : [PostModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionVW.delegate = self
         collectionVW.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadTopPost()
+    }
+    
+    func loadTopPost() {
+        self.posts.removeAll()
+        Api.Post.observeTopPosts { (post) in
+            self.posts.append(post)
+            self.collectionVW.reloadData()
+        }
     }
     
 
@@ -24,11 +40,14 @@ class DisCoverViewController: UIViewController {
 extension DisCoverViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionVW.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DisCoverCollectionViewCell
+        let post = posts[indexPath.row]
+        cell.post = post
+        return cell
     }
     
     

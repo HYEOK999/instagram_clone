@@ -32,6 +32,27 @@ class HomeViewController: UIViewController {
     
     func loadPosts(){
         SVProgressHUD.show()
+        Api.Feed.observeFeed(withId: Api.User.CURRENT_USER!.uid) { (post) in
+            guard let postId = post.uid else{
+                return
+            }
+            
+            self.fetchUser(uid: postId, completed: {
+                self.posts.append(post)
+                self.tableVW.reloadData()
+            })
+            
+            
+        }
+        
+        Api.Feed.observeFeedRemoved(withId: Api.User.CURRENT_USER!.uid) { (post) in
+            self.posts = self.posts.filter{ $0.id != post.id }
+            self.users = self.users.filter{ $0.id != post.uid }
+            
+            self.tableVW.reloadData()
+        }
+        
+        SVProgressHUD.dismiss()
 //        Api.Feed.observeFeed(withId: Api.User.CURRENT_USER!.uid) { (post) in
 //            guard let postId = post.uid else{
 //                return
@@ -47,13 +68,13 @@ class HomeViewController: UIViewController {
 //                self.tableVW.reloadData()
 //            })
 //        }
-        Api.Post.observePosts { (post) in
-            self.fetchUser(uid: Api.User.CURRENT_USER!.uid, completed: {
-                self.posts.append(post)
-                SVProgressHUD.dismiss()
-                self.tableVW.reloadData()
-            })
-       } // 아래의 내용을 PostApi 에 담아서 분리하여 정리하였음.
+//        Api.Post.observePosts { (post) in
+//            self.fetchUser(uid: Api.User.CURRENT_USER!.uid, completed: {
+//                self.posts.append(post)
+//                SVProgressHUD.dismiss()
+//                self.tableVW.reloadData()
+//            })
+//       } // 아래의 내용을 PostApi 에 담아서 분리하여 정리하였음.
 //        Database.database().reference().child("posts").observe(.childAdded) { (snapshot) in
 //            if let dict = snapshot.value as? [String: Any] {
 //                let newPost = PostModel.transformPostPhoto(dict: dict)

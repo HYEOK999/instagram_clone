@@ -185,10 +185,10 @@
 				4802894E22E2DE840095C471 /* PostApi.swift */,
 				4802895022E2E8970095C471 /* ComentApi.swift */,
 				4802895222E2EAEC0095C471 /* PostComentApi.swift */,
-				4805E9CE22C73E3600E7B1CF /* AuthService.swift */,
 				481E76EA22E9CA55005E1C43 /* MyPostApi.swift */,
 				481E76F022E9DA41005E1C43 /* FollowApi.swift */,
 				481E76F222E9E161005E1C43 /* FeedApi.swift */,
+				4805E9CE22C73E3600E7B1CF /* AuthService.swift */,
 				48325F3D22F30A4800123A08 /* HelperService.swift */,
 			);
 			path = Apis;

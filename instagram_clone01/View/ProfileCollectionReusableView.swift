@@ -34,6 +34,20 @@ class ProfileCollectionReusableView: UICollectionReusableView {
         Api.MyPosts.fetchCountMyPosts(userId: user!.id!) { (count) in
             self.myPostCount.text = "\(count)"
         }
+        
+        Api.Follow.fetchCountFollowing(userId: user!.id!) { (count) in
+            self.myFallowingCount.text = "\(count)"
+        }
+        
+        Api.Follow.fetchCountFollowers(userId: user!.id!) { (count) in
+            self.myFollowerCount.text = "\(count)"
+        }
+        
+        if user?.id == Api.User.CURRENT_USER?.uid{
+            fallowBtn.setTitle("Edit Profile", for: .normal)
+        }else {
+            updateStateFallowBtn()
+        }
     }
     
     func updateStateFallowBtn(){

@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
         
         tableVW.dataSource = self
         tableVW.delegate = self
-        loadUsers()
+        
         doSearch()
 
         // Do any additional setup after loading the view.

@@ -26,16 +26,24 @@ class PeopleTableViewCell: UITableViewCell {
             let photoUrl = URL(string: photoUrlString)
 //            profileImg.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
             profileImg.kf.setImage(with: photoUrl)
+//            profileImg.kf.setImage(with: photoUrl, placeholder: "placeholderImg")
         }
         
-        Api.Follow.isFollowing(userId: user!.id!) { (value) in
-            if value {
-                self.configureUnFollowBtn()
-            }
-            else{
-                self.configureFollowBtn()
-            }
+        
+        if user!.isFollowing! {
+            configureUnFollowBtn()
+        }else{
+            configureFollowBtn()
         }
+        
+//        Api.Follow.isFollowing(userId: user!.id!) { (value) in
+//            if value {
+//                self.configureUnFollowBtn()
+//            }
+//            else{
+//                self.configureFollowBtn()
+//            }
+//        }
     }
     
     func configureFollowBtn() {

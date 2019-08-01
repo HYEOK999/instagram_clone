@@ -55,6 +55,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionVW" destination="Yl4-zv-qpo" id="wOd-CV-B59"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHc-nZ-Uop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

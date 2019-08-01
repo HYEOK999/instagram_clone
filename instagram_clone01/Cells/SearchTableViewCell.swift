@@ -24,7 +24,10 @@ class SearchTableViewCell: UITableViewCell {
         nameLB.text = user?.username
         if let photoUrlString = user?.profileImgUrl {
             let photoUrl = URL(string: photoUrlString)
-            profileImg.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+//            profileImg.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+//            profileImg.kf.setImage(with: photoUrl)
+            profileImg.kf.setImage(with: photoUrl, placeholder: UIImage(named: "placeholderImg"))
+        
         }
         
         Api.Follow.isFollowing(userId: user!.id!) { (value) in

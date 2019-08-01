@@ -26,7 +26,8 @@ class ProfileCollectionReusableView: UICollectionReusableView {
         self.name.text = user!.username
         if let photoUrlString = user!.profileImgUrl {
             let photoUrl = URL(string: photoUrlString)
-            self.profileImg.sd_setImage(with: photoUrl)
+//            self.profileImg.sd_setImage(with: photoUrl)
+            self.profileImg.kf.setImage(with: photoUrl)
         }
     }
     

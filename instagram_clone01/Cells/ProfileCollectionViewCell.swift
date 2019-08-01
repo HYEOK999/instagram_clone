@@ -21,7 +21,8 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     func updateView() {
         if let photoUrlString = post?.photoURL {
             let photoUrl = URL(string: photoUrlString)
-            profileIconImg.sd_setImage(with: photoUrl)
+//            profileIconImg.sd_setImage(with: photoUrl)
+            profileIconImg.kf.setImage(with: photoUrl)
         }
     }
     

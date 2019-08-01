@@ -40,7 +40,9 @@ class ComentTableViewCell: UITableViewCell {
         nameLabel.text = user?.username
         if let photoUrlString = user?.profileImgUrl{
             let photoUrl = URL(string: photoUrlString)
-            profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+//            profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+            profileImageView.kf.setImage(with: photoUrl)
+        
         }
     }
     

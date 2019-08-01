@@ -28,6 +28,7 @@ class SearchViewController: UIViewController {
         tableVW.dataSource = self
         tableVW.delegate = self
         loadUsers()
+        doSearch()
 
         // Do any additional setup after loading the view.
     }
@@ -43,7 +44,18 @@ class SearchViewController: UIViewController {
     }
     
     func doSearch(){
-        
+        if let searchText = searchBar.text?.lowercased() {
+            self.users.removeAll()
+            self.tableVW.reloadData()
+            Api.User.queryUsers(withText: searchText) { (user) in
+                self.isFollowing(userId: user.id!, complected: { (value) in
+                    user.isFollowing = value
+                    
+                    self.users.append(user)
+                    self.tableVW.reloadData()
+                })
+            }
+        }
     }
 
     func isFollowing(userId: String, complected:@escaping(Bool) ->Void){

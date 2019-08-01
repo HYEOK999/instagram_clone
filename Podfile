@@ -10,7 +10,7 @@ pod 'Firebase/Auth'
 pod 'SVProgressHUD'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
-pod 'SDWebImage'
+pod 'Kingfisher'
 
   # Pods for instagram_clone01
 

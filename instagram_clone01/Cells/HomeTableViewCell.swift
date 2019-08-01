@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 import FirebaseDatabase
 import FirebaseAuth
 
@@ -40,7 +40,8 @@ class HomeTableViewCell: UITableViewCell {
         captionLabel.text = post?.caption
         if let photoUrlString = post?.photoURL{
             let photoUrl = URL(string: photoUrlString)
-            postImageView.sd_setImage(with: photoUrl)
+//            postImageView.sd_setImage(with: photoUrl)
+            postImageView.kf.setImage(with: photoUrl)
             
         }
         Database.database().reference().child("posts").child(self.post!.id!).observeSingleEvent(of: .value) { (snapshot) in
@@ -61,7 +62,8 @@ class HomeTableViewCell: UITableViewCell {
         nameLabel.text = user?.username
         if let photoUrlString = user?.profileImgUrl{
             let photoUrl = URL(string: photoUrlString)
-            profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+//            profileImageView.sd_setImage(with: photoUrl, placeholderImage: UIImage(named: "placeholderImg"))
+            profileImageView.kf.setImage(with: photoUrl)
         }
     }
     

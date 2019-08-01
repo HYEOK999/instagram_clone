@@ -41,7 +41,11 @@ class ProfileViewController: UIViewController {
         }
         
         Api.MyPosts.REF_MYPOSTS.child(currentUser.uid).observe(.childAdded) { (snapshot) in
-            Api.Post.obsersvePost(withId: snapshot.key, complection: { (post) in
+//            Api.Post.obsersvePost(withId: snapshot.key, complection: { (post) in
+//                self.posts.append(post)
+//                self.collectionVW.reloadData()
+//            })
+            Api.Post.observePost(withId: snapshot.key, completion: { (post) in
                 self.posts.append(post)
                 self.collectionVW.reloadData()
             })

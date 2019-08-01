@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
 //            })
 //        }
         Api.Post.observePosts { (post) in
-            self.fetchUser(uid: Auth.auth().currentUser!.uid, completed: {
+            self.fetchUser(uid: Api.User.CURRENT_USER!.uid, completed: {
                 self.posts.append(post)
                 SVProgressHUD.dismiss()
                 self.tableVW.reloadData()

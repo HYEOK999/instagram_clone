@@ -43,6 +43,7 @@
 		481E770022E9E962005E1C43 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E76FF22E9E962005E1C43 /* SearchTableViewCell.swift */; };
 		48325F3C22F3032100123A08 /* DisCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48325F3B22F3032100123A08 /* DisCoverCollectionViewCell.swift */; };
 		48325F3E22F30A4800123A08 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48325F3D22F30A4800123A08 /* HelperService.swift */; };
+		48325F4022F31EA600123A08 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48325F3F22F31EA600123A08 /* SettingTableViewController.swift */; };
 		48E3B04622D0666A006C0848 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04522D0666A006C0848 /* CameraViewController.swift */; };
 		48E3B04822D070B9006C0848 /* LineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04722D070B8006C0848 /* LineButton.swift */; };
 		48E3B04A22D071F3006C0848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E3B04922D071F3006C0848 /* HomeViewController.swift */; };
@@ -113,6 +114,7 @@
 		481E76FF22E9E962005E1C43 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		48325F3B22F3032100123A08 /* DisCoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisCoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		48325F3D22F30A4800123A08 /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
+		48325F3F22F31EA600123A08 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		48E3B04522D0666A006C0848 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		48E3B04722D070B8006C0848 /* LineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineButton.swift; sourceTree = "<group>"; };
 		48E3B04922D071F3006C0848 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				481E76EE22E9D539005E1C43 /* PeopleViewController.swift */,
 				481E76F722E9E7BE005E1C43 /* SearchViewController.swift */,
 				481E76FD22E9E850005E1C43 /* DisCoverViewController.swift */,
+				48325F3F22F31EA600123A08 /* SettingTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				4805E99922C737B700E7B1CF /* ViewController.swift in Sources */,
 				48E3B04822D070B9006C0848 /* LineButton.swift in Sources */,
 				4805E9D522C74D3F00E7B1CF /* ProfileViewController.swift in Sources */,
+				48325F4022F31EA600123A08 /* SettingTableViewController.swift in Sources */,
 				481E76FE22E9E850005E1C43 /* DisCoverViewController.swift in Sources */,
 				4805E9D722C74D7600E7B1CF /* UserModel.swift in Sources */,
 				481E76F122E9DA41005E1C43 /* FollowApi.swift in Sources */,

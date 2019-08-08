@@ -59,7 +59,37 @@ class AuthService{
         }
     }
     
-    static func findPw(email:String, onSuccess:@escaping()-> Void, onError:@escaping(_ errorMessage:String?)-> Void){
+    static func updateUserInfo(username:String, email:String, imgData:Data, onSuccess: @escaping () -> Void, onError: @escaping (_ errorMessage: String?) -> Void){
+        Api.User.CURRENT_USER?.updateEmail(to: email, completion: { (error) in
+            if error != nil {
+                return
+            }
+            else {
+                let uid = Api.User.CURRENT_USER?.uid
+                let storeRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("profile_image").child(uid!)
+                storeRef.putData(imgData, metadata: nil, completion: { (metaData, error) in
+                    if error != nil {
+                        return
+                    }
+                    // storageRef.downloadURL(completion: { (url, error)
+                    storeRef.downloadURL(completion: { (url, error) in
+                        if error != nil{
+                            return
+                        }
+                        if let profileImageURL = url?.absoluteString{
+                            updateDatabase(profileImgUrl: profileImageURL, username: username, email: email, onSuccess: {
+                                onSuccess()
+                            }, onError: { (err) in
+                                onError(err)
+                            })
+                        }
+                    })
+                })
+            }
+        })
+    }
+    
+    static func findPw(email:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage:String?) -> Void){
         SVProgressHUD.show()
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
             if error != nil{
@@ -85,5 +115,23 @@ class AuthService{
             "username_lowercase" : username.lowercased()
             ])
         onSuccess()
+    }
+    
+    static func updateDatabase(profileImgUrl:String, username:String, email:String, onSuccess:@escaping()->Void, onError:@escaping(_ errorMessage:String?)->Void) {
+        let dict = [
+            "username" : username,
+            "email" : email,
+            "profileImg" : profileImgUrl,
+            "username_lowercase" : username.lowercased()
+        ]
+        Api.User.REF_CURRENT_USER?.updateChildValues(dict, withCompletionBlock: { (error, ref) in
+            if error != nil {
+                onError(error?.localizedDescription)
+                return
+            }
+            else{
+                onSuccess()
+            }
+        })
     }
 }

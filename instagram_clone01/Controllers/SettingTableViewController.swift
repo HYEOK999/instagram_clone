@@ -8,6 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import SVProgressHUD
+
+protocol SettingTableViewControllerDelegate {
+    func updateUserInfo()
+}
 
 class SettingTableViewController: UITableViewController {
 
@@ -15,6 +20,7 @@ class SettingTableViewController: UITableViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    var delegate : SettingTableViewControllerDelegate?
     var selectedImg : UIImage?
     var user : UserModel!
     
@@ -28,6 +34,21 @@ class SettingTableViewController: UITableViewController {
         pickerController.delegate = self
         //사진첩 불러오기
         present(pickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtnTapped(_ sender: Any) {
+        SVProgressHUD.show()
+        if let profileImg = self.profileImg.image , let imgData = profileImg.jpegData(compressionQuality: 0.1){
+            AuthService.updateUserInfo(username: nameTextField.text!, email: emailTextField.text!, imgData: imgData, onSuccess: {
+                self.delegate?.updateUserInfo()
+                self.navigationController?.popViewController(animated: true)
+                SVProgressHUD.dismiss()
+            }) { (err) in
+                print(err)
+                SVProgressHUD.showError(withStatus: err)
+            }
+        }
+        
     }
     
     @IBAction func logOutBtn(_ sender: Any) {

@@ -27,6 +27,11 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchUser()
+        fetchMyPosts()
+    }
+    
     func fetchUser() {
         Api.User.observeCurrentUser { (user) in
             self.user = user
@@ -110,5 +115,12 @@ extension ProfileViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionVW.frame.size.width / 3 - 1, height: collectionVW.frame.size.width / 3 - 1)
+    }
+}
+
+
+extension ProfileViewController : SettingTableViewControllerDelegate {
+    func updateUserInfo() {
+        self.fetchUser()
     }
 }
